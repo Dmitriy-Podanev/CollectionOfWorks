@@ -1,19 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {ChartsDisplay} from "./Components/ChartDisplay/chartsDisplay";
+import './routes/root.css'
+import ErrorPage from "./Error/ErrorPage";
+import {SideBar} from "./Components/SideBar/sideBar";
+import {routers} from "./routes/constants";
+import Contact from "./Components/TESTcontact/contact";
+import {ModelDisplay3D} from "./Components/ModelDisplay3D";
+import {GeometryCube} from "./Components/ModelDisplay3D/cube";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    document.getElementById('root') as HTMLElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <SideBar listBtn={routers}/>,
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: "main/:id",
+                element: <Contact/>,
+            },
+            {
+                path: "/",
+                element: null,
+            },
+            {
+                path: '/cube',
+                element: <GeometryCube/>,
+
+            }
+        ]
+    },
+
+]);
+
+/*children: routers.map((item)=>{
+    if(item.typeName === TypeName.route)
+        return {
+            path: item.path,
+            element: item.component,
+        }*/
+
+root.render(
+        <RouterProvider router={router}/>
+);
+
+
 reportWebVitals();
