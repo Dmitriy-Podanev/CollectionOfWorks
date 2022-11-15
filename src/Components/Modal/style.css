@@ -1,0 +1,32 @@
+/*
+.modal {
+  &__title {
+     {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+  &__title-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+  }
+
+  &__btn-close {
+    margin-top: 4px !important;
+    padding: 0 !important;
+    &:hover{
+      background-color: transparent !important;
+    }
+    &_dark {
+      svg {
+        fill: var(--primary-light_50) !important;
+      }
+    }
+  }
+}
+*/
