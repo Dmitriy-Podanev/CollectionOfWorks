@@ -6,11 +6,17 @@ interface props {
     children: React.ReactNode
 }
 
-interface propsxxxxxxxx {
+interface props2 {
     text?: string
     onClick: (type:string)=> void,
     children: React.ReactNode
 }
+interface props3333 {
+    text?: string
+    onClick: (type:string)=> void,
+    children: React.ReactNode
+}
+
 
 export const FilterLink = ({text, onClick, children}:props) => {
     return (
