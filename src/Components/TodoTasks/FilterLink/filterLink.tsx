@@ -6,7 +6,7 @@ interface props {
     children: React.ReactNode
 }
 
-interface props22111 {
+interface propszxczxc {
     text?: string
     onClick: (type:string)=> void,
     children: React.ReactNode
