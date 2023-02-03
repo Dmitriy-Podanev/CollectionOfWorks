@@ -1,8 +1,9 @@
 import React from "react";
 import {ChartsDisplay} from "../Components/ChartDisplay/chartsDisplay";
-import {Stocks} from "../type/stocks";
+import {Stocks} from "../type/stocksType";
 import {ModelDisplay3D} from "../Components/ModelDisplay3D";
 import {GeometryCube} from "../Components/ModelDisplay3D/cube";
+import {TodoList} from "../Components/TodoTasks/TodoList/todoList";
 
 
 export const TypeName: Stocks.typeNameMenu = {
@@ -50,6 +51,13 @@ export const routers: menuBtn[] = [
         }]
         //component: ModelDisplay3D,
     },
+    {
+        title:'Todo List',
+        id: 'TodoList',
+        path: '/main/TodoList',
+        typeName: TypeName.route,
+        component: TodoList
+    }
 
 
 ]
